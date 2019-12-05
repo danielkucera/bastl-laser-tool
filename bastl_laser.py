@@ -3156,7 +3156,7 @@ class laser_gcode(inkex.Effect):
                         p += csp
                         #o += [of]
                         curve = self.parse_curve(p, layer)
-                        self.draw_curve(curve, layer, biarc_group)
+                        #self.draw_curve(curve, layer, biarc_group)
                         #print_("p list=",p)
                         #print_("opacity list=",o)
                         print_("Generate gcode")
