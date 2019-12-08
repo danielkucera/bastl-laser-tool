@@ -2421,7 +2421,7 @@ class laser_gcode(inkex.Effect):
     def export_gcode(self,gcode):
         gcode_pass = gcode
         for x in range(1,self.options.passes):
-            gcode += "G91\n" + self.move_cmd + " Z-" + self.options.pass_depth + "\nG90\n" + gcode_pass
+            gcode += "G91\n" + self.move_cmd + " Z-" + ("%.3F" % float(self.options.pass_depth)) + "\nG90\n" + gcode_pass
         f = open(self.options.directory+self.options.file, "w")
         if self.options.laser_mode == "rep":
           f.write(self.header + self.move_cmd+ " F" + self.options.travel_speed + "\n" + gcode + self.footer)
